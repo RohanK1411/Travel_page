@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Array Input</title>
+	<style >
+		form{
+			padding-left: 42%;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<form name="inputform"  onsubmit="return reversearray()" method="post">
+		<label for="input0">Enter Array Element[0]: </label>
+		<input type="number
+		" placeholder="Enter Any Integer"  name="ele0" required="">
+		<br><br>
+
+
+		<label for="input1">Enter Array Element[1]: </label>
+		<input type="number
+		" placeholder="Enter Any Integer"  name="ele1" required="">
+		<br><br>
+		
+
+		<label for="input2">Enter Array Element[2]: </label>
+		<input type="number
+		" placeholder="Enter Any Integer"  name="ele2" required="">
+		<br><br>
+		
+
+		<label for="input3">Enter Array Element[3]: </label>
+		<input type="number
+		" placeholder="Enter Any Integer"  name="ele3" required="">
+		<br><br>
+		
+
+		<label for="input4">Enter Array Element[4]: </label>
+		<input type="number
+		" placeholder="Enter Any Integer"  name="ele4" required="">
+		<br><br>	
+
+		<input type="submit" name="Click here to reverse array elements">
+	</form>
+</div>
+
+<div>
+	<p id="demo"></p>
+</div>
+
+<script type="text/javascript">
+	
+	function reversearray() {
+		// body...
+		var inarray=[];
+
+	inarray[0] = document.forms["inputform"]["ele0"].value;
+	inarray[1] = document.forms["inputform"]["ele1"].value;
+	inarray[2] = document.forms["inputform"]["ele2"].value;
+	inarray[3] = document.forms["inputform"]["ele3"].value;
+	inarray[4] = document.forms["inputform"]["ele4"].value;
+
+
+	var first = 0;
+	var last  = 4;
+	var temp = 0;
+
+	while(first<last)
+	{
+		temp = inarray[first];
+
+		inarray[first] = inarray[last];
+
+		inarray[last] = temp;
+		first++;
+		last--;
+	}
+
+	document.getElementById("demo").innerHTML ="Array with reversed element is: - "+"<br"+
+	inarray[0]+" "+inarray[1]+" "+inarray[2]+" "+
+	inarray[3]+" "+inarray[4];
+
+	return false;
+	}
+
+</script>
+</body>
+</html>
